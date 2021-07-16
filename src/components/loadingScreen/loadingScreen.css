@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:300);
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 12pt;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  text-align: center;
+  width: 10em;
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 14.5em);
+}
+.logo h1 {
+  font-size: 7em;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Oswald", sans-serif;
+  color: #e50914;
+  text-shadow: -1px -1px 0px #000, 1px 1px 0px #000, 2px 2px 0px #000,
+    3px 3px 0px #000, 4px 4px 0px #000, 5px 5px 0px #000, 6px 6px 0px #000,
+    7px 7px 0px #000, 8px 8px 0px #000, 9px 9px 0px #000, 10px 10px 0px #000;
+  letter-spacing: 0.25em;
+}
+.loading {
+  position: absolute;
+  bottom: 10em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box {
+  height: 2.5em;
+  width: 1.8em;
+  background: #e50914;
+  margin: 1px;
+  position: relative;
+  float: left;
+  z-index: 999;
+  bottom: 1.5em;
+  transform: scale(1);
+  animation: netflix 1s linear;
+}
+
+#box:nth-child(1) {
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+}
+#box:nth-child(2) {
+  animation-delay: 0.4s;
+  animation-iteration-count: infinite;
+}
+#box:nth-child(3) {
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+}
+#box:nth-child(4) {
+  animation-delay: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+#box:nth-child(5) {
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes netflix {
+  0% {
+    transform: scaleY(1);
+    background: #e50914c4;
+  }
+  16% {
+    transform: scaleY(1.5);
+    background: #e50914c4;
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  75% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 7em;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo h1 {
+    font-size: 4em;
+  }
+  .logo {
+    left: calc(50% - 8.5em);
+  }
+}

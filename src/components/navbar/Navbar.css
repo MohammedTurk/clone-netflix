@@ -1,0 +1,36 @@
+.navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s;
+  z-index: 3;
+}
+.nav-black {
+  background-color: rgb(20, 20, 20);
+}
+.nav-logo {
+  cursor: pointer;
+  position: fixed;
+  left: 35px;
+  object-fit: contain;
+  width: 110px;
+}
+.nav-avatar {
+  cursor: pointer;
+  position: fixed;
+  right: 35px;
+  object-fit: contain;
+  width: 33px;
+}
+@media (max-width: 576px) {
+  .nav-logo {
+    left: 20px;
+  }
+  .nav-avatar {
+    right: 20px;
+  }
+}

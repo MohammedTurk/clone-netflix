@@ -1,0 +1,297 @@
+/* .movie-interface {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.555);
+  height: 100vh;
+  z-index: 1000;
+} */
+
+.movie-data {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.555);
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.movie-poster {
+  transform: translateY(30px);
+  width: 63%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  z-index: 1001;
+  height: 300px;
+}
+.movie-data img {
+  height: 463px;
+  width: 100%;
+  border-radius: 10px;
+}
+.movie-des {
+  background-color: #fff;
+}
+.movie-img {
+  position: relative;
+}
+.img-fade {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgb(0 0 0 / 60%),
+    #181818,
+    #181818 /* rgba(0, 0, 0, 0.767) */
+  );
+}
+@media (max-width: 992px) {
+  .movie-poster {
+    width: 89%;
+  }
+  /* .movie-data img {
+    height: 330px;
+  } */
+}
+
+.close-btn {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+  background-color: #181818 !important;
+  width: 36px;
+  height: 36px;
+  line-height: 38px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+.close-btn path {
+  stroke: #fff !important;
+}
+.tools-movie {
+  display: flex;
+  position: absolute;
+  left: 45px;
+  bottom: 85px;
+  width: 100%;
+}
+#play-movie {
+  padding: 4px 20px 4px 13px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#play-movie:hover {
+  background-color: rgba(255, 255, 255, 0.835);
+}
+#play-movie svg {
+  font-size: 25px;
+}
+
+.add-btn,
+.like-btn,
+.dlike-btn {
+  background-color: rgba(42, 42, 42, 0.6);
+  width: 35px;
+  height: 35px;
+  line-height: 37px;
+  font-size: 18px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+  margin-left: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.add-btn:hover,
+.like-btn:hover,
+.dlike-btn:hover {
+  border-color: #fff;
+}
+.add-btn .title-btn,
+.like-btn .title-btn,
+.dlike-btn .title-btn {
+  display: none;
+}
+.add-btn:hover .title-btn,
+.like-btn:hover .title-btn,
+.dlike-btn:hover .title-btn {
+  display: block;
+  position: absolute;
+  top: -42px;
+  padding: 0px 13px;
+  height: 30px;
+  line-height: 30px;
+  background: rgb(226, 226, 226);
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.add-btn:hover .title-btn {
+  left: 50px;
+}
+.like-btn:hover .title-btn {
+  left: 110px;
+}
+.dlike-btn:hover .title-btn {
+  left: 150px;
+}
+.add-btn .title-btn::after,
+.like-btn .title-btn::after,
+.dlike-btn .title-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  position: absolute;
+  border-color: rgb(226, 226, 226) transparent transparent transparent;
+}
+.add-btn .title-btn::after {
+  left: 55px;
+}
+.like-btn .title-btn::after {
+  left: 40px;
+}
+.dlike-btn .title-btn::after {
+  left: 45px;
+}
+.movie-des {
+  background-color: #181818;
+  color: #fff;
+  transform: translateY(-55px);
+  padding: 0 45px;
+  display: grid;
+  grid-template-columns: 60% 30%;
+  column-gap: 50px;
+  padding-bottom: 30px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.movie-des .des1 .head-des .match {
+  color: #46d369;
+  font-weight: 700;
+  font-size: 17px;
+}
+.head-des .match,
+.date-movie,
+.time-movie,
+.age {
+  margin-right: 7px;
+}
+.age {
+  border: 1px solid gray;
+  padding: 0 5px;
+  font-weight: 400;
+}
+.quality {
+  padding: 0 5px;
+  border: 1px solid gray;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.body-des {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  padding-bottom: 20px;
+}
+.name,
+.cast-team,
+.genres,
+.the-movie {
+  font-size: 15px;
+}
+.name .head,
+.cast-team .head,
+.genres .head,
+.the-movie .head {
+  color: #777;
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 5px;
+}
+.des2 div {
+  margin-bottom: 10px;
+}
+.des2 {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+@media (max-width: 1100px) {
+  .movie-poster {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .movie-img {
+    height: 412px;
+  }
+  .movie-img img {
+    height: 360px;
+  }
+  .body-des {
+    font-size: 15px;
+  }
+  .name,
+  .cast-team,
+  .genres,
+  .the-movie {
+    font-size: 14px;
+  }
+  .movie-poster {
+    width: 97%;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-img {
+    height: 320px;
+  }
+  .movie-img img {
+    height: 265px;
+  }
+  .body-des {
+    font-size: 15px;
+  }
+  .name,
+  .cast-team,
+  .genres,
+  .the-movie {
+    font-size: 14px;
+  }
+  .movie-poster {
+    width: 97%;
+  }
+}
+@media (max-width: 490px) {
+  .movie-img img {
+    height: 190px !important;
+  }
+  .tools-movie {
+    bottom: 152px;
+  }
+  .movie-des {
+    transform: translateY(-125px);
+  }
+  .img-fade {
+    bottom: 122px;
+    height: 42px;
+  }
+}
